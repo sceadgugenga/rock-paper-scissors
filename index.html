@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function computerPlay() {
+
+            let choices = ["Rock", "Paper", "Scissors"]
+            let choiceIdx = Math.floor(Math.random() * 3);
+            return choices[choiceIdx]
+        }
+
+
+        function playRound(playerSelection, computerSelection) {
+
+            let cSelectLower = computerSelection.toLowerCase()
+            let pSelectLower = playerSelection.toLowerCase()
+            let pSelectTitle = pSelectLower[0].toUpperCase() + pSelectLower.substr(1)
+            let cSelectTitle = cSelectLower[0].toUpperCase() + cSelectLower.substr(1)
+            // 0=computer, 1=player, 3=tie
+            let winner = -1
+            if (cSelectLower == "rock") {
+                switch (pSelectLower) {
+                    case "rock":
+                        winner = 3
+                        break
+                    case "paper":
+                        winner = 1
+                        break
+                    case "scissors":
+                        winner = 0
+                        break
+                }
+
+            } else if (cSelectLower == "paper") {
+                switch (pSelectLower) {
+                    case "rock":
+                        winner = 0
+                        break
+                    case "paper":
+                        winner = 3
+                        break
+                    case "scissors":
+                        winner = 1
+                        break
+                }
+
+            } else if (cSelectLower == "scissors") {
+                switch (pSelectLower) {
+                    case "rock":
+                        winner = 1
+                        break
+                    case "paper":
+                        winner = 0
+                        break
+                    case "scissors":
+                        winner = 3
+                        break
+                }
+
+            }
+
+            if (winner == 0) {
+                return "You lose! " + cSelectTitle + " beats " + pSelectLower + "."
+            } else if (winner == 1) {
+                return "You win! " + pSelectTitle + " beats " + cSelectLower + "."
+            } else if (winner == 3) {
+                return "Tie"
+            } else {
+                return "Come on man, play by the rules. Choose rock paper or sissors!"
+            }
+
+        }
+
+        function game() {
+
+            for (let i = 0; i < 5; i++) {
+                
+                playerChoice = prompt("Choose rock, paper, or scissors:  ")
+                while (["rock","paper","scissors"].indexOf(playerChoice.toLowerCase()) == -1){
+                    playerChoice = prompt("You must choose either rock, paper, or scissors:  ")
+                }
+
+                console.log(playRound(playerChoice, computerPlay()))
+            }
+        }
+        game()
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
