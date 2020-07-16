@@ -1,0 +1,79 @@
+.blinking {
+    animation: blinkingText 1.2s infinite;
+}
+
+@keyframes blinkingText {
+    0% {
+        color: red;
+    }
+
+    100% {
+        color: transparent;
+    }
+}
+
+
+
+#player-msg {
+    /* align-self: first baseline; */
+    display: flex;
+    margin-top: 23px;
+    color: blue;
+}
+
+
+
+
+
+
+.hidden {
+    visibility: hidden;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+}
+
+#content {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Inline #2 | http://127.0.0.1:5500/index.html */
+
+#new-game {
+    display: flex;
+    align-self: end;
+}
+
+#new-game-btn {
+    background-color: lightgreen;
+    border: none;
+}
+
+#new-game-btn:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+
+#scores {
+    display: flex;
+    border-style: solid;
+    border-width: 1px;
+    padding: 34px;
+    padding-top: 34px;
+    flex-flow: column;
+    height: 145px;
+    width: 187px;
+
+}
+
+#game {
+    display: flex;
+    margin-left: 25px;
+    flex-flow: column;
+
+}
